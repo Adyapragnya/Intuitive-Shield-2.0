@@ -1,0 +1,197 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Pricing Section
+--------------------------------------------------------------*/
+.pricing {
+  --card-border-radius: 20px;
+
+  .row {
+    justify-content: center;
+  }
+
+  .pricing-card {
+    height: 100%;
+    background: var(--surface-color);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    &.popular {
+      border: 2px solid var(--accent-color);
+
+      .plan-cta .btn-plan {
+        background-color: var(--accent-color);
+        color: var(--contrast-color);
+
+        &:hover {
+          background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+        }
+      }
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 40px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .plan-header {
+    padding: 30px 30px 20px;
+    text-align: center;
+
+    .plan-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+
+      i {
+        font-size: 28px;
+        color: var(--accent-color);
+      }
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 15px;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+    }
+  }
+
+  .plan-pricing {
+    text-align: center;
+    padding: 10px 30px 20px;
+    position: relative;
+
+    .currency {
+      font-size: 24px;
+      vertical-align: top;
+      line-height: 1;
+      color: var(--heading-color);
+      font-weight: 600;
+    }
+
+    .amount {
+      font-size: 60px;
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1;
+    }
+
+    .period {
+      font-size: 16px;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+    }
+  }
+
+  .plan-features {
+    padding: 20px 30px;
+    flex: 1;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 12px 0;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: color-mix(in srgb, var(--default-color), transparent 20%);
+
+        &.disabled {
+          color: color-mix(in srgb, var(--default-color), transparent 60%);
+        }
+
+        i {
+          font-size: 18px;
+
+          &.bi-check-circle-fill {
+            color: var(--accent-color);
+          }
+
+          &.bi-x-circle-fill {
+            color: color-mix(in srgb, var(--default-color), transparent 60%);
+          }
+        }
+      }
+    }
+  }
+
+  .plan-cta {
+    padding: 10px 30px 30px;
+    text-align: center;
+
+    .btn-plan {
+      display: inline-block;
+      width: 100%;
+      padding: 14px 32px;
+      background-color: color-mix(in srgb, var(--default-color), transparent 95%);
+      color: var(--default-color);
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: color-mix(in srgb, var(--default-color), transparent 80%);
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    .pricing-card {
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .plan-pricing {
+      .amount {
+        font-size: 48px;
+      }
+    }
+
+    .plan-header {
+      padding: 25px 20px 15px;
+    }
+
+    .plan-features,
+    .plan-pricing,
+    .plan-cta {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

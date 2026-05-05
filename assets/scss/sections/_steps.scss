@@ -1,0 +1,159 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Steps Section
+--------------------------------------------------------------*/
+.steps {
+  .steps-wrapper {
+    position: relative;
+    padding: 20px 0;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 85%);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .step-item {
+    margin-bottom: 50px;
+    width: 100%;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-child(even) {
+      .step-content {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .step-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .step-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background-color: var(--surface-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid color-mix(in srgb, var(--accent-color), transparent 85%);
+    transition: all 0.3s ease-in-out;
+
+    i {
+      font-size: 32px;
+      color: var(--accent-color);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .step-info {
+    flex: 1;
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .step-number {
+    display: inline-block;
+    font-family: var(--heading-font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: var(--heading-color);
+  }
+
+  p {
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 991px) {
+    .steps-wrapper::before {
+      left: 25px;
+    }
+
+    .step-item {
+      .step-content {
+        flex-direction: row !important;
+      }
+    }
+
+    .step-icon {
+      width: 60px;
+      height: 60px;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    .step-info {
+      padding: 20px;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .step-content {
+      gap: 20px;
+    }
+
+    .step-icon {
+      width: 50px;
+      height: 50px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .step-info {
+      padding: 15px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+}

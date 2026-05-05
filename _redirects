@@ -1,0 +1,11 @@
+/assets/img/solutions/intro.gif /assets/img/optimized/intro-hero.webp 301
+/*.map /404.html 404
+/.env /404.html 404
+/*.log /404.html 404
+/*.ini /404.html 404
+/*.bak /404.html 404
+/*.sql /404.html 404
+/composer.json /404.html 404
+/composer.lock /404.html 404
+/package.json /404.html 404
+/package-lock.json /404.html 404

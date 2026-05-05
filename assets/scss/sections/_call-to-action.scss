@@ -1,0 +1,211 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Call To Action Section
+--------------------------------------------------------------*/
+.call-to-action {
+  padding-top: 80px;
+  position: relative;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 97%);
+  border-radius: 1rem;
+  overflow: hidden;
+  padding-bottom: 80px;
+
+  .badge {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 2rem;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  .features {
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--surface-color);
+      border-radius: 0.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      i {
+        color: var(--accent-color);
+        font-size: 1.25rem;
+      }
+
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  .cta-buttons {
+    .btn {
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+
+      &.btn-primary {
+        background-color: var(--accent-color);
+        border-color: var(--accent-color);
+        color: var(--contrast-color);
+
+        &:hover {
+          background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+          border-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+          transform: translateY(-2px);
+        }
+      }
+
+      &.btn-outline {
+        border: 2px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+        color: var(--accent-color);
+
+        &:hover {
+          background-color: var(--accent-color);
+          border-color: var(--accent-color);
+          color: var(--contrast-color);
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+
+  .content-right {
+    flex-shrink: 0;
+    max-width: 100%;
+    width: 450px;
+
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 2rem;
+      right: -1rem;
+      background: var(--surface-color);
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      animation: float 3s ease-in-out infinite;
+
+      .card-icon {
+        width: 3rem;
+        height: 3rem;
+        background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          color: var(--accent-color);
+          font-size: 1.5rem;
+        }
+      }
+
+      .card-content {
+        display: flex;
+        flex-direction: column;
+
+        .stats-number {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: var(--accent-color);
+        }
+
+        .stats-text {
+          font-size: 0.875rem;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .decoration {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+
+    .circle-1,
+    .circle-2 {
+      position: absolute;
+      border-radius: 50%;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    }
+
+    .circle-1 {
+      width: 300px;
+      height: 300px;
+      top: -150px;
+      right: -150px;
+      opacity: 0.5;
+    }
+
+    .circle-2 {
+      width: 200px;
+      height: 200px;
+      bottom: -100px;
+      left: -100px;
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 2rem;
+
+    .content-right {
+      width: 100%;
+      margin-top: 2rem;
+
+      .floating-card {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: -3rem;
+        margin-right: 1rem;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
